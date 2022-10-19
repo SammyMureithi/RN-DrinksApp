@@ -16,7 +16,7 @@ function DrinkContext( props ) {
         <TextInput value={searchInput} onChange={(e)=>setSearchInput(e.target.value)}/>
     )
     useEffect( () => {
-        fetch( `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${searchInput[0]}` )
+        fetch( `https://www.thecocktaildb.com/api/json/v1/1/search.php?f=${searchInput}` )
             .then( res => res.json() )
             .then( data => setDrinks(data.drinks) )
             .catch( error => console.log( error ) );

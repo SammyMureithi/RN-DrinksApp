@@ -27,7 +27,6 @@ export default function App() {
     return (
       <CartStack.Navigator>
         <CartStack.Screen name='Cart' component={CartScreen} options={{ headerShown:false}}/>
-        <CartStack.Screen name='Detailed' component={DetailedDrinkScreen}/>
       </CartStack.Navigator>
     )
   }

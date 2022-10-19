@@ -9,7 +9,7 @@ function CartScreen( { navigation } ) {
                     <ScrollView>
                         <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
                             <Text>{Context.name}</Text>
-                            <Button title='Detailed' onPress={() => navigation.navigate( "Detailed" )} />
+                            <Button title='Detailed' />
                         </View>
                     </ScrollView>
                 )
