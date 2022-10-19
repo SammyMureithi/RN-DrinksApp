@@ -12,6 +12,7 @@ import DetailedDrinkScreen from './Screens/DetailedDrinkScreen';
 
 const BottomTab = createBottomTabNavigator();
 const HomeStack = createNativeStackNavigator();
+const CartStack = createNativeStackNavigator();
 export default function App() {
   function HomeStackScreen() {
     return (
@@ -19,6 +20,14 @@ export default function App() {
         <HomeStack.Screen name="Home" component={HomeScreen}  options={{ headerShown:false}} />
         <HomeStack.Screen name="Detailed" component={DetailedDrinkScreen}/>
       </HomeStack.Navigator>
+    )
+  }
+  function CartStackScreen() {
+    return (
+      <CartStack.Navigator>
+        <CartStack.Screen name='Cart' component={CartScreen} options={{ headerShown:false}}/>
+        <CartStack.Screen name='Detailed' component={DetailedDrinkScreen}/>
+      </CartStack.Navigator>
     )
   }
   return (
@@ -40,8 +49,8 @@ export default function App() {
           marginBottom: 10, position: "absolute", marginLeft: 10, marginRight: 10
         }
       })}>
-        <BottomTab.Screen name='Home' component={HomeStackScreen} />
-        <BottomTab.Screen name='Cart' component={CartScreen} options={{ headerShown:false}} />
+        <BottomTab.Screen name='Home' component={HomeStackScreen} options={{ headerShown:false}} />
+        <BottomTab.Screen name='Cart' component={CartStackScreen} options={{ headerShown:false}} />
       </BottomTab.Navigator>
     </NavigationContainer>
    

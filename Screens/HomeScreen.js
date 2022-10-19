@@ -1,9 +1,13 @@
+import { Avatar } from '@react-native-material/core';
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native';
-function HomeScreen() {
+import { Button, Image, StyleSheet, Text, View } from 'react-native';
+function HomeScreen( { navigation } ) {
+
   return (
-      <View>
+      <View >
           <Text>HomeScreen</Text>
+          <Button title='Detailed' onPress={() => navigation.navigate( "Detailed" )} />
+          
    </View>
   )
 }
