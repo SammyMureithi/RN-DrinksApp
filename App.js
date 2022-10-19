@@ -21,7 +21,7 @@ export default function App() {
           return <Ionicons name={iconName} color={color} size={30}/>
         },
         tabBarActiveTintColor: "tomato",
-        tabBarStyle:{backgroundColor:"green"}
+        tabBarStyle:{backgroundColor:"green",borderRadius:22,marginBottom:10,position:"absolute"}
       })}>
         <BottomTab.Screen name='Home' component={HomeScreen} options={{ headerShown:false}} />
         <BottomTab.Screen name='Cart' component={CartScreen} options={{ headerShown:false}} />
