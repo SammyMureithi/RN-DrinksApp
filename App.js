@@ -5,8 +5,22 @@ import CartScreen from './Screens/CartScreen';
 import HomeScreen from './Screens/HomeScreen';
 import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DetailedDrinkScreen from './Screens/DetailedDrinkScreen';
+
+
+
 const BottomTab = createBottomTabNavigator();
+const HomeStack = createNativeStackNavigator();
 export default function App() {
+  function HomeStackScreen() {
+    return (
+      <HomeStack.Navigator>
+        <HomeStack.Screen name="Home" component={HomeScreen}  options={{ headerShown:false}} />
+        <HomeStack.Screen name="Detailed" component={DetailedDrinkScreen}/>
+      </HomeStack.Navigator>
+    )
+  }
   return (
     <NavigationContainer>
       <BottomTab.Navigator screenOptions={( { route } ) => ( {
@@ -21,9 +35,12 @@ export default function App() {
           return <Ionicons name={iconName} color={color} size={30}/>
         },
         tabBarActiveTintColor: "tomato",
-        tabBarStyle:{backgroundColor:"green",borderRadius:22,marginBottom:10,position:"absolute"}
+        tabBarStyle: {
+          backgroundColor: "green", borderRadius: 22,
+          marginBottom: 10, position: "absolute", marginLeft: 10, marginRight: 10
+        }
       })}>
-        <BottomTab.Screen name='Home' component={HomeScreen} options={{ headerShown:false}} />
+        <BottomTab.Screen name='Home' component={HomeStackScreen} />
         <BottomTab.Screen name='Cart' component={CartScreen} options={{ headerShown:false}} />
       </BottomTab.Navigator>
     </NavigationContainer>
