@@ -1,8 +1,12 @@
+import { Avatar } from '@react-native-material/core';
 import React from 'react'
 import { Button, Image, StyleSheet, Text, View } from 'react-native';
-function CardDesign() {
-  return (
-    <View >
+import { Card } from 'react-native-paper';
+function CardDesign({navigation}) {
+    return (
+        <Card >
+            <Card.Content>
+            <View >
             <View style={{display:"flex",flexDirection:"row",padding:10,alignItems:"center"}}>
                 <Avatar image={require( "../assets/bg2.jpg" )} />
                 <View style={{marginLeft:10}}>
@@ -24,6 +28,9 @@ function CardDesign() {
                 <Image source={require( "../assets/cart.png" )} style={{width:20,height:20}}/>
             </View>
         </View>
+            </Card.Content>
+        </Card>
+   
   )
 }
 
