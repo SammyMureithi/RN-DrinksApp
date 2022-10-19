@@ -7,6 +7,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import DetailedDrinkScreen from './Screens/DetailedDrinkScreen';
+import { DrinkContext } from './Context/DrinkContext';
 
 
 
@@ -31,29 +32,30 @@ export default function App() {
     )
   }
   return (
-    <NavigationContainer>
-      <BottomTab.Navigator screenOptions={( { route } ) => ( {
-        tabBarIcon: ( { focused, color, size } ) => {
-          let iconName;
-          if (route.name ==="Home") {
-            iconName=focused? "home":"home-outline";
+    <DrinkContext>
+      <NavigationContainer>
+        <BottomTab.Navigator screenOptions={( { route } ) => ( {
+          tabBarIcon: ( { focused, color, size } ) => {
+            let iconName;
+            if ( route.name === "Home" ) {
+              iconName = focused ? "home" : "home-outline";
+            }
+            else {
+              iconName = focused ? "cart" : "cart-outline";
+            }
+            return <Ionicons name={iconName} color={color} size={30} />
+          },
+          tabBarActiveTintColor: "tomato",
+          tabBarStyle: {
+            backgroundColor: "green", borderRadius: 22,
+            marginBottom: 10, position: "absolute", marginLeft: 10, marginRight: 10
           }
-          else {
-            iconName=focused ? "cart": "cart-outline";
-          }
-          return <Ionicons name={iconName} color={color} size={30}/>
-        },
-        tabBarActiveTintColor: "tomato",
-        tabBarStyle: {
-          backgroundColor: "green", borderRadius: 22,
-          marginBottom: 10, position: "absolute", marginLeft: 10, marginRight: 10
-        }
-      })}>
-        <BottomTab.Screen name='Home' component={HomeStackScreen} options={{ headerShown:false}} />
-        <BottomTab.Screen name='Cart' component={CartStackScreen} options={{ headerShown:false}} />
-      </BottomTab.Navigator>
-    </NavigationContainer>
-   
+        } )}>
+          <BottomTab.Screen name='Home' component={HomeStackScreen} options={{ headerShown: false }} />
+          <BottomTab.Screen name='Cart' component={CartStackScreen} options={{ headerShown: false }} />
+        </BottomTab.Navigator>
+      </NavigationContainer>
+    </DrinkContext>
   );
 }
 

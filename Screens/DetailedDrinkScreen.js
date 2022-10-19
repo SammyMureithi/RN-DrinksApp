@@ -1,7 +1,7 @@
 import React from 'react'
 import { Avatar } from '@react-native-material/core';
 import { Card } from 'react-native-paper';
-import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Button, Image, Text , View } from 'react-native';
 
 
 function DetailedDrinkScreen() {
