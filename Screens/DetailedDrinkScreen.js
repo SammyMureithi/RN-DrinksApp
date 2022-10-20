@@ -19,37 +19,36 @@ function DetailedDrinkScreen( { route, navigation } ) {
                 return (
                     <ScrollView>
                         <Card>
-                    <Card.Content>
-                      <View >
-                          <View style={{ display: "flex", flexDirection: "row", padding: 10, alignItems: "center" }}>
-                              <Avatar image={{uri:itemData.strDrinkThumb}} />
-                              <View style={{ marginLeft: 10 }}>
-                                        <Text style={{ fontWeight: "bold" }}>{itemData.strDrink }</Text>
-                                        <Text style={{ fontStyle: "italic" }}>{ itemData.dateModified}</Text>
-                              </View>
-                          </View>
-                          <View>
-                              <Text>
+                            <Card.Content>
+                                <View >
+                                    <View style={{ display: "flex", flexDirection: "row", padding: 10, alignItems: "center" }}>
+                                        <Avatar image={{ uri: itemData.strDrinkThumb }} />
+                                        <View style={{ marginLeft: 10 }}>
+                                            <Text style={{ fontWeight: "bold" }}>{itemData.strDrink}</Text>
+                                            <Text style={{ fontStyle: "italic" }}>{itemData.dateModified}</Text>
+                                        </View>
+                                    </View>
+                                    <View>
+                                        <Text>
                                         {itemData.strInstructions}
-                                        {itemData.strInstructionsDE}
-                              </Text>
-                          </View>
-                                <View style={{ width: "100%", height: "50%" }}>
-                                    <Image source={{uri:itemData.strDrinkThumb}}
-                              style={{ width: "100%", height: "100%" }} /></View>
-                          <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", margin: 30, marginTop: 10 }}>
-                              <Image style={{ width: 20, height: 20 }}
-                                  source={require( "../assets/like.png" )} />
-                              <Image source={require( "../assets/cart.png" )} style={{ width: 20, height: 20 }} />
-                          </View>
-                      </View>
-                  </Card.Content>
-          
-          </Card>
+                                            {itemData.strInstructionsDE}
+                                        </Text>
+                                    </View>
+                                    <View style={{ width: "100%", height: "50%" }}>
+                                        <Image source={{ uri: itemData.strDrinkThumb }}
+                                            style={{ width: "100%", height: "100%" }} /></View>
+                                    <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", margin: 30, marginTop: 10 }}>
+                                        <Image style={{ width: 20, height: 20 }}
+                                            source={require( "../assets/like.png" )} />
+                                        <Image source={require( "../assets/cart.png" )} style={{ width: 20, height: 20 }} />
+                                    </View>
+                                </View>
+                            </Card.Content>
+                        </Card>
                     </ScrollView>
                 )
             }}
-      </Consumer>
+        </Consumer>
       
 
   )
