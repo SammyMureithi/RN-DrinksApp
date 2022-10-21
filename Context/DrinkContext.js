@@ -9,9 +9,7 @@ const { Consumer, Provider } = createContext();
 function DrinkContext( props ) {
     const [drinks, setDrinks] = useState( [] );
     const [searchInput, setSearchInput] = useState( "i" );
-    function handleChange( e ) {
-        setSearchInput( e.target.value );
-    }
+ 
     const input = (
         <TextInput value={searchInput} onChange={(e)=>setSearchInput(e.target.value)}/>
     )
