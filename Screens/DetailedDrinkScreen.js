@@ -1,9 +1,9 @@
 import React from 'react'
 import { Avatar } from '@react-native-material/core';
 import { Card } from 'react-native-paper';
-import { Button, Image, Text , View } from 'react-native';
+import { Image, Text , View } from 'react-native';
 import { Consumer } from '../Context/DrinkContext';
-import { useState } from 'react';
+
 import { ScrollView } from 'react-native-web';
 
 
