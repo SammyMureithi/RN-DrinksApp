@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Image, StyleSheet, Text, View,ScrollView, TouchableOpacity } from 'react-native';
+import { View,ScrollView } from 'react-native';
 import { Card, TextInput } from 'react-native-paper';
 import CardDesign from '../Components/CardDesign';
 import { Consumer } from '../Context/DrinkContext';
